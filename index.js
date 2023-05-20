@@ -34,7 +34,7 @@ document.getElementById('cropButton').addEventListener('click',function(){
     var previewDiv=document.getElementById('image-preview');
     previewDiv.style.display = 'none';
     $(".editButtons").hide();
-    document.getElementById('whiteShape').src = 'asset/blackBox.png';
+    document.getElementById('whiteShape').src = 'asset/OG.png';
 });
 
 // Rotate Button Function
@@ -60,7 +60,7 @@ document.getElementById('flipYButton').addEventListener('click', function() {
 function original(){
     var image=document.getElementById('croppedImage');
     var shape=document.getElementById('shape');
-    shape.src='asset/blackBox.png';
+    shape.src='asset/OG.png';
     const imageWidth= image.width;
     const imageHeight= image.height;
 
