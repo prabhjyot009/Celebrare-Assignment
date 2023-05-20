@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Cropper.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <title>Celebrare Assignment</title>
+</head>
+<body>
+    <!-- NOTE -->
+    <!-- PLEASE 'REFRESH THE PAGE' OR 'SELECT THE SHAPES AGAIN' IF THE PREVIEW IS NOT WORKING PROPERLY -->
+    <!-- THANK YOU ! -->
+    <!-- /NOTE -->
+
+    <!-- title part -->
+    <div class="shadow text-center p-1">
+        <i class="fa-solid fa-chevron-left back-icon"></i>
+        <h2 class="title">Add Image / Icon</h2>
+    </div>
+
+    <!-- section to display the preview of image and to edit the image -->
+    <div class="card card-body shadow mt-2 w-100">
+        <div class="text-center">
+            <p>Upload Image</p>
+            <button class="chooseFile" onclick="document.getElementById('inputImage').click()">Choose From Device</button>
+            <input type="file" id="inputImage" accept="image/*" onchange="inputImagePreview(event);this.value = null;" style="display: none;" > 
+            <div id="image-preview"></div>  
+            <div class="editButtons">
+                <button id="rotateButton">Rotate <i class="fa-solid fa-rotate-right"></i></button>
+                <button id="flipXButton">Flip Horizontally</button>
+                <button id="flipYButton">Flip Vertically</button>
+                <br>
+                <button id="cropButton" >Crop</button>
+            </div> 
+        </div>
+    </div>
+
+    <!-- Hidden elements for cropped image and canvas -->
+    <img src="" alt="" id="shape"  style="display: none;">
+    <img src="" alt="" id="croppedImage" style="display: none;" >
+    <canvas id="canvas" style="display: none;"></canvas>
+
+
+    <!-- Final image display section -->
+    <div class="finalImage text-center" id="finalImage">
+        <div class="image-container">
+            <img src="" id="finalWhiteShape" alt="">
+            <img src="" id="finalMergedImage"  alt="">
+        </div>
+    </div>
+
+    <!-- Popup box after editing the image -->
+    <div class="card popup card-body shadow text-center" id="popup">
+            <h2>Uploaded Image</h2> 
+            <!-- Close Button of Popup Box -->
+            <a href="" class="crossIcon"><i class="fa-solid fa-xmark"></i></a>
+
+            <!-- Previewing cropped image with its shape -->
+            <div id="cropped-preview" >
+                <div class="image-container">
+                    <img src="" id="whiteShape" class="" alt="">
+                    <img src="" id="mergedImage" class="" alt="">
+                </div>
+            </div>
+            
+            <!-- shape selection section -->
+            <div class="shapes d-flex align-items-center justify-content-evenly ">
+                <a href="#" onclick="original()" class="originalText"> <div class="card p-2">Original</div></a>
+                <a href="#" onclick="frame1()"> <div class="card p-2"><img src="asset/user_image_frame_1.png" alt="" ></div></a>
+                <a href="#" onclick="frame2()"> <div class="card p-2"><img src="asset/user_image_frame_2.png" alt="" ></div></a>
+                <a href="#" onclick="frame3()"> <div class="card p-2"><img src="asset/user_image_frame_3.png" alt="" ></div></a>
+                <a href="#" onclick="frame4()"> <div class="card p-2"><img src="asset/user_image_frame_4.png" alt="" ></div></a>
+            </div>
+            <button class="btn btn-success mx-auto mt-2" onclick="finalImage()">Use This Image</button>
+           <span class="mt-2">Please <u>'refresh the page'</u> or <u>'select the shapes again'</u>  if the preview is not working properly</span>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/2c2b4f9a0e.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

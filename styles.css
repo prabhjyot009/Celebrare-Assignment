@@ -1,0 +1,173 @@
+/* adjusting fonts in page */
+.title,p,h2,span{
+    font-family: 'DM Serif Display', serif;
+}
+p{
+    font-size: larger;
+}
+
+/* back icon at the top left */
+.back-icon{
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+}
+
+/* Choose from Device Button Styles */
+.chooseFile{
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #007663;
+    color: white;
+    border-radius: 4px;
+}  
+.chooseFile:hover{
+    background-color: #006652;
+}
+
+/* Hiding edit buttons when image not uploaded */
+.editButtons{
+    display: none;
+    margin-top: 5px;
+}
+
+/* margin of image-preview */
+#image-preview{
+    margin-top: 15px;  
+}
+
+/* edit buttons */
+#rotateButton, #flipXButton, #flipYButton{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px 8px;
+    margin-top: 5px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+#cropButton{
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 5px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 5px 8px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+/* popup box */
+.popup{
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 75vw;
+    visibility: hidden;
+    /* opacity: 0; */
+}
+.popup.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+
+/* popup box elements styles */
+.shapes{
+    margin-top: 310px ;
+}
+
+.shapes img{
+    width: 50px;
+}
+
+.originalText{
+    color: black;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+.originalText:hover{
+    color: black;
+}
+
+.crossIcon{
+    color: black;
+    font-size: 25px;
+    position: absolute;
+    right: 10%;
+}
+
+/* Image container in finalImage div */
+.image-container {
+    position: relative;
+    text-align: center;
+}
+.image-container img {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Final image styles */
+.finalImage{
+    display: none;
+    margin-top: 25px;
+}
+.finalImage img{
+    width: 500px;
+    height: 500px;
+}
+
+
+/* Using mix-blend-mode to display the final Image */
+.image-container img:last-child {
+    position: absolute;
+    mix-blend-mode: difference;
+}
+
+/* Using Media Queries for Responsiveness at different screen sizes */
+@media (max-width: 480px){
+    .image-container img {
+        height: 150px;
+        width: 150px;
+    }
+    .finalImage img{
+        width: 300px;
+        height: 300px;
+    }
+    .shapes{
+        margin-top: 160px ;
+    }
+    .shapes img{
+        width: 30px;
+    }
+    .popup{
+        width: 95vw;
+        position: absolute;
+        top: 50%;
+    }
+}
+
+@media(min-width:481px ) and (max-width: 576px){
+    .finalImage img{
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media(min-width:577px ) and (max-width: 768px){
+    .finalImage img{
+        width: 400px;
+        height: 400px;
+    }
+}
